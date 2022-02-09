@@ -92,7 +92,7 @@ def name_of_period():
 
 
 # файлы для работы
-xl_template = 'ШАБЛОН 1-em-01-2021.xlsx'
+xl_template = 'ШАБЛОН 1-em-01-2022.xlsx'
 xl_1em_sheets = {
                 '1': 'res/01-1 ст.xlsx',
                 '2': 'res/02Принято к производству дел в отчетном периоде.xlsx',
