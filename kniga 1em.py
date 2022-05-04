@@ -6,7 +6,7 @@
 # Программа пропускает 4 строки из переменной 'rows_for_skip'.
 # После отработки программы остаётся поменять на титульном листе период.
 #
-#     Максим Красовский \ февраль (сентябрь) 2021 \ noook@yandex.ru
+#     Максим Красовский \ февраль 2021 (май 2022) \ noook@yandex.ru
 
 import time
 import datetime
@@ -120,8 +120,10 @@ xl_1em_sheets = {
 rows_for_skip = (52, 53, 54, 60)
 
 # переменные для работы
-max_row_first_page = 22
-max_col_first_page = 17
+start_row_first_page = 4
+start_col_first_page = 3
+max_row_first_page = 24
+max_col_first_page = 18
 max_row_another_page = 61
 max_col_another_page = 25
 
@@ -145,9 +147,9 @@ for dict_key in xl_1em_sheets:
     # постраничный алгоритм, на каждом листе по своему считается
     # первый лист особый подход
     if wb_1em.index(wb_1em_s) == 1:
-        for i_row in range(4, max_row_first_page+1):
-            for i_col in range(2, max_col_first_page+1):
-                # B4:Q22 -> C5:R23 || R4C2:R22C17 -> R5C3:R23C18
+        for i_row in range(start_row_first_page, max_row_first_page+1):
+            for i_col in range(start_col_first_page, max_col_first_page+1):
+                # C4:R24  ->  C5:R23!!!  ||  R4C3:R24C18  ->  R5C3:R23C18!!!
                 wb_1em_s.cell(i_row+1, i_col+1).value = conv_cell(wb_file_data_s.cell(i_row, i_col).value)
 
     # остальные листы все по одному алгоритму
