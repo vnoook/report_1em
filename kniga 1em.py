@@ -149,7 +149,7 @@ for dict_key in xl_1em_sheets:
     if wb_1em.index(wb_1em_s) == 1:
         for i_row in range(start_row_first_page, max_row_first_page+1):
             for i_col in range(start_col_first_page, max_col_first_page+1):
-                # C4:R24  ->  C5:R23!!!  ||  R4C3:R24C18  ->  R5C3:R23C18!!!
+                # C4:R24 -> D5:S25  ||  R4C3:R24C18 -> R5C4:R25C19
                 wb_1em_s.cell(i_row+1, i_col+1).value = conv_cell(wb_file_data_s.cell(i_row, i_col).value)
 
     # остальные листы все по одному алгоритму
