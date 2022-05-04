@@ -180,8 +180,10 @@ for dict_key in xl_1em_sheets:
                             wb_1em_s.cell(i_row-40, i_col).value = wb_file_data_s.cell(i_row, i_col).value +\
                                                                    wb_file_data_s.cell(i_row-40, i_col).value
                             if i_col % 3 == 0:
-                                decision_cell = wb_1em_s.cell(i_row-40, i_col-1).value - wb_1em_s.cell(i_row-40, i_col).value
-                                wb_1em_s.cell(i_row-40, i_col+1).value = (decision_cell/wb_1em_s.cell(i_row-40, i_col).value)*100
+                                decision_cell =\
+                                    wb_1em_s.cell(i_row-40, i_col-1).value - wb_1em_s.cell(i_row-40, i_col).value
+                                wb_1em_s.cell(i_row-40, i_col+1).value =\
+                                    (decision_cell/wb_1em_s.cell(i_row-40, i_col).value)*100
 
         # тут обрабатываются четырёхколоночные листы
         elif int(dict_key) in (6, 7, 9, 10, 13, 14, 15, 16, 17):
