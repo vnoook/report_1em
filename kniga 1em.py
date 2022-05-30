@@ -92,7 +92,7 @@ def name_of_period():
 
 
 # файлы для работы
-xl_template = 'ШАБЛОН 1-em-01-2022.xlsx'
+xl_template = 'ШАБЛОН 1-em-05-2022.xlsx'
 xl_1em_sheets = {
                 '1': 'res/01-1 ст.xlsx',
                 '2': 'res/02Принято к производству дел в отчетном периоде.xlsx',
@@ -175,7 +175,7 @@ for dict_key in xl_1em_sheets:
         if int(dict_key) in (2, 3, 4, 5, 8, 11, 12, 18, 19, 20):
             for i_row in range(rows_for_skip[1], rows_for_skip[2]+1):
                 for i_col in range(2, max_col_another_page+1):
-                    if int_cell(wb_file_data_s.cell(i_row, i_col).value) != False:
+                    if int_cell(wb_file_data_s.cell(i_row, i_col).value):
                         if i_col % 3 in (2, 0):
                             wb_1em_s.cell(i_row-40, i_col).value = wb_file_data_s.cell(i_row, i_col).value +\
                                                                    wb_file_data_s.cell(i_row-40, i_col).value
@@ -191,7 +191,7 @@ for dict_key in xl_1em_sheets:
             for i_row in range(rows_for_skip[1], rows_for_skip[2]+1):
                 for i_col in range(2, max_col_another_page+1):
                     # если содержимое число, то продолжаю
-                    if int_cell(wb_file_data_s.cell(i_row, i_col).value) != False:
+                    if int_cell(wb_file_data_s.cell(i_row, i_col).value):
                         # если это нужные колонки, то обрабатываю
                         if i_col % 4 in (2, 3):
                             wb_1em_s.cell(i_row-40, i_col).value = wb_file_data_s.cell(i_row, i_col).value +\
